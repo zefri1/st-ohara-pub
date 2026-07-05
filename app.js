@@ -28,31 +28,36 @@ const FALLBACK_EVENTS = [
 
 /* Резервные фото меню (используются по умолчанию, пока не загружены из Google Таблиц) */
 const FALLBACK_MENU_IMAGES = [
-    { image_url: 'assets/menu/hot_dishes.jpg', category: 'food' },
-    { image_url: 'assets/menu/tea.jpg', category: 'non_alcoholic' },
-    { image_url: 'assets/menu/grill_menu.jpg', category: 'food' },
-    { image_url: 'assets/menu/signature_cocktails.jpg', category: 'bar' },
-    { image_url: 'assets/menu/draft_beer_1.jpg', category: 'bar' },
-    { image_url: 'assets/menu/classic_cocktails.jpg', category: 'bar' },
-    { image_url: 'assets/menu/hot_drinks.jpg', category: 'non_alcoholic' },
+    // Кухня (Food)
+    { image_url: 'assets/menu/hot_snacks.jpg', category: 'food' },
     { image_url: 'assets/menu/cold_snacks.jpg', category: 'food' },
-    { image_url: 'assets/menu/whiskey_wales_japan_islay.jpg', category: 'bar' },
+    { image_url: 'assets/menu/salads.jpg', category: 'food' },
+    { image_url: 'assets/menu/soups_burgers.jpg', category: 'food' },
+    { image_url: 'assets/menu/hot_dishes.jpg', category: 'food' },
+    { image_url: 'assets/menu/grill_menu.jpg', category: 'food' },
+    { image_url: 'assets/menu/side_dishes_sauces_bread.jpg', category: 'food' },
     { image_url: 'assets/menu/desserts.jpg', category: 'food' },
+
+    // Барная карта (Bar)
+    { image_url: 'assets/menu/draft_beer_1.jpg', category: 'bar' },
+    { image_url: 'assets/menu/draft_beer_2.jpg', category: 'bar' },
+    { image_url: 'assets/menu/classic_cocktails.jpg', category: 'bar' },
+    { image_url: 'assets/menu/signature_cocktails.jpg', category: 'bar' },
+    { image_url: 'assets/menu/shots_sets.jpg', category: 'bar' },
+    { image_url: 'assets/menu/tinctures_1.jpg', category: 'bar' },
+    { image_url: 'assets/menu/irish_whiskey.jpg', category: 'bar' },
+    { image_url: 'assets/menu/whiskey_wales_japan_islay.jpg', category: 'bar' },
+    { image_url: 'assets/menu/bourbon_menu.jpg', category: 'bar' },
+    { image_url: 'assets/menu/cognac_liqueurs_tequila.jpg', category: 'bar' },
     { image_url: 'assets/menu/port_wine_rum.jpg', category: 'bar' },
     { image_url: 'assets/menu/red_wines.jpg', category: 'bar' },
-    { image_url: 'assets/menu/tinctures_1.jpg', category: 'bar' },
+    { image_url: 'assets/menu/white_wines.jpg', category: 'bar' },
     { image_url: 'assets/menu/sparkling_wines_vermouth.jpg', category: 'bar' },
-    { image_url: 'assets/menu/shots_sets.jpg', category: 'bar' },
-    { image_url: 'assets/menu/cognac_liqueurs_tequila.jpg', category: 'bar' },
-    { image_url: 'assets/menu/soups_burgers.jpg', category: 'food' },
-    { image_url: 'assets/menu/draft_beer_2.jpg', category: 'bar' },
-    { image_url: 'assets/menu/bourbon_menu.jpg', category: 'bar' },
-    { image_url: 'assets/menu/hot_snacks.jpg', category: 'food' },
-    { image_url: 'assets/menu/tinctures_2_drinks.jpg', category: 'non_alcoholic' },
-    { image_url: 'assets/menu/side_dishes_sauces_bread.jpg', category: 'food' },
-    { image_url: 'assets/menu/salads.jpg', category: 'food' },
-    { image_url: 'assets/menu/irish_whiskey.jpg', category: 'bar' },
-    { image_url: 'assets/menu/white_wines.jpg', category: 'bar' }
+
+    // Безалкогольные (Non-alcoholic)
+    { image_url: 'assets/menu/tea.jpg', category: 'non_alcoholic' },
+    { image_url: 'assets/menu/hot_drinks.jpg', category: 'non_alcoholic' },
+    { image_url: 'assets/menu/tinctures_2_drinks.jpg', category: 'non_alcoholic' }
 ];
 
 function parseCSV(text) {
