@@ -522,12 +522,31 @@ section {
     box-shadow: var(--shadow-subtle);
 }
 
-/* Photo gallery menu content */
+/* Photo gallery menu content (Horizontal Carousel) */
 .menu-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
     gap: 24px;
-    padding-top: 32px;
+    padding: 32px 16px 24px 16px; /* Padding to allow shadows and spacing */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-brand-green) var(--color-bg-secondary);
+}
+
+.menu-gallery-grid::-webkit-scrollbar {
+    height: 8px;
+}
+.menu-gallery-grid::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+    border-radius: 4px;
+}
+.menu-gallery-grid::-webkit-scrollbar-thumb {
+    background: var(--color-brand-green);
+    border-radius: 4px;
 }
 
 .menu-gallery-item {
@@ -537,6 +556,9 @@ section {
     box-shadow: var(--shadow-small);
     transition: var(--transition-smooth);
     background-color: var(--color-bg-card);
+    flex: 0 0 85%; /* Take up most of the screen width on mobile, leaving a bit of next item visible */
+    max-width: 350px; /* Limit size on desktop */
+    scroll-snap-align: center;
 }
 
 .menu-gallery-item:hover {
@@ -549,6 +571,7 @@ section {
     width: 100%;
     height: auto;
     object-fit: cover;
+    pointer-events: none; /* Prevents dragging the image instead of scrolling */
 }
 
 /* --------------------------------------------------

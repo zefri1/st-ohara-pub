@@ -159,7 +159,7 @@ function renderMenu(images, category = 'all') {
 
     const filteredImages = category === 'all' 
         ? images 
-        : images.filter(img => img.category === category);
+        : images.filter(img => img.category && img.category.trim().toLowerCase() === category.toLowerCase());
 
     gallery.innerHTML = filteredImages.map(img => `
         <div class="menu-gallery-item">
