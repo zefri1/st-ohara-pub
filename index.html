@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. O'Hara | Ирландский Паб в Костроме</title>
+    <meta name="description" content="Легендарный ирландский паб St. O'Hara в центре Костромы на Молочной горе. Традиционное пиво, стейки, боксти и атмосфера живого рока.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-container container">
+            <a href="#" class="logo">
+                <img src="assets/logo-clean.png?v=3" alt="St. O'Hara Logo" class="logo-img">
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">Атмосфера</a>
+                <a href="#menu" class="nav-link">Меню</a>
+                <a href="#events" class="nav-link">События</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+            <a href="#book" class="btn btn-primary nav-cta">Забронировать</a>
+            <button class="mobile-toggle" aria-label="Открыть меню" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="assets/outside.jpg" alt="Паб St. O'Hara снаружи" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content container">
+            <span class="hero-subtitle fade-in-up">
+                <img src="assets/shamrock.svg" alt="shamrock" width="16" height="20" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                Céad Míle Fáilte • Ирландский паб на Молочной горе
+            </span>
+            <h1 class="hero-title fade-in-up">Традиции Ирландии <br>в центре Костромы</h1>
+            <p class="hero-text fade-in-up">Место с характером, живым роком и честной кухней. Встречаемся за дубовой барной стойкой.</p>
+            <div class="hero-actions fade-in-up">
+                <a href="#menu" class="btn btn-primary">Посмотреть меню</a>
+                <a href="#book" class="btn btn-secondary">Забронировать стол</a>
+            </div>
+            <div class="hero-info-grid fade-in-up">
+                <div class="info-item">
+                    <span class="info-label">Адрес</span>
+                    <span class="info-value">ул. Молочная гора, 4А</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Режим работы</span>
+                    <span class="info-value">Вс–Чт: 12:00–00:00 | Пт–Сб: 12:00–02:00</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Телефон</span>
+                    <a href="tel:+74942499600" class="info-value link-hover">+7 (4942) 49-96-00</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Atmosphere Section -->
+    <section class="about" id="about">
+        <div class="container grid-two-col">
+            <div class="about-text-wrapper scroll-reveal">
+                <span class="section-subtitle">Атмосфера</span>
+                <h2 class="section-title">Больше чем паб. <br>Ваш личный причал.</h2>
+                <p class="about-p">В пабе St. O'Hara мы воссоздали аутентичный дух ирландского гостеприимства. Сердце нашего заведения — массивная дубовая барная стойка, за которой каждый вечер рождаются новые истории и ведутся неспешные беседы.</p>
+                <p class="about-p">Каждую неделю у нас звучит живой акустический рок, гремят трансляции главных спортивных матчей, а в бокалах пенится отборное разливное и крафтовое пиво. Это идеальное место для расслабленного ужина или шумной встречи с друзьями.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <!-- Lucide: Beer icon -->
+                            <svg class="feature-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 11h1a3 3 0 0 1 0 6h-1"/>
+                                <path d="M9 12v6"/>
+                                <path d="M13 12v6"/>
+                                <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5z"/>
+                                <path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="feature-title">Истинный импорт</h4>
+                            <p class="feature-desc">Подборка классического ирландского стаута и лучших сортов крафта.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <!-- Lucide: Music icon -->
+                            <svg class="feature-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18V5l12-2v13"/>
+                                <circle cx="6" cy="18" r="3"/>
+                                <circle cx="18" cy="16" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="feature-title">Живая музыка</h4>
+                            <p class="feature-desc">Концерты местных и приглашенных рок-музыкантов каждые выходные.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-visual scroll-reveal">
+                <div class="img-frame">
+                    <img src="assets/inside.png" alt="Интерьер паба St. O'Hara" class="about-img">
+                    <div class="img-badge">
+                        <span class="badge-number">100%</span>
+                        <span class="badge-text">Ирландский <br>дух</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="menu-header text-center scroll-reveal">
+                <span class="section-subtitle">Гастрономия</span>
+                <h2 class="section-title">Фирменное меню St. O'Hara</h2>
+                <p class="section-desc">Мы объединили традиционные ирландские рецепты с европейской и авторской кухней. Честные порции, качественные ингредиенты.</p>
+                
+                <!-- Menu Tabs -->
+                <div class="menu-tabs">
+                    <button class="menu-tab-btn active" data-tab="food">Кухня</button>
+                    <button class="menu-tab-btn" data-tab="irish">Ирландская классика</button>
+                    <button class="menu-tab-btn" data-tab="drinks">Барная карта</button>
+                </div>
+            </div>
+
+            <!-- Menu Content -->
+            <div class="menu-grid scroll-reveal">
+                
+                <!-- Tab: Food (Burgers & Main & Starters) -->
+                <div class="menu-tab-content active" id="tab-food">
+                    <!-- Category: Burgers -->
+                    <div class="menu-category">
+                        <h3 class="category-title">Фирменные бургеры</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Бургер «Max O'Hara»</h4>
+                                <span class="menu-item-price">680 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Сочная котлета из мраморной говядины, фирменный соус, сыр чеддер, хрустящий бекон, карамелизированный лук на пышной булочке.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Рыбный бургер с треской</h4>
+                                <span class="menu-item-price">590 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Хрустящая волжская треска в пивном кляре, соус тартар, маринованные огурчики и свежий салат айсберг.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Main -->
+                    <div class="menu-category">
+                        <h3 class="category-title">Горячие блюда</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Стейк ирландского пивовара</h4>
+                                <span class="menu-item-price">980 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Сочный стейк из диафрагмы, маринованный в стауте, подаётся с печёным мини-картофелем и пряным перечным соусом.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Судак по-волжски</h4>
+                                <span class="menu-item-price">750 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Нежное филе судака с хрустящей корочкой, подаётся на подушке из тонких спагетти из цукини под сливочно-икорным соусом.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Свиные рёбрышки Глазурь-Стаут</h4>
+                                <span class="menu-item-price">850 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Медленно томлёные свиные рёбрышки в густой глазури на основе тёмного пива и мёда. Подаются с маринованной капустой.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Starters -->
+                    <div class="menu-category">
+                        <h3 class="category-title">Пивные закуски</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Пинта жареных креветок</h4>
+                                <span class="menu-item-price">720 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Тигровые креветки, обжаренные в чесночном масле с зеленью. Подаются с ломтиком лимона и соусом айоли.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Брускетта с сочным ростбифом</h4>
+                                <span class="menu-item-price">480 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Хрустящий багет, ростбиф собственного приготовления, горчичный соус, вяленые томаты и руккола.</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Запечённый сыр Камамбер</h4>
+                                <span class="menu-item-price">620 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Теплый камамбер с брусничным конфитюром и грецкими орехами. Подаётся с пшеничными гренками.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Irish Classic -->
+                <div class="menu-tab-content" id="tab-irish">
+                    <div class="grid-two-col" style="gap: 40px; align-items: start; width: 100%;">
+                        <div class="menu-category" style="width: 100%;">
+                            <h3 class="category-title">Традиционные ирландские Боксти</h3>
+                            <p class="category-subtitle">Классические ирландские картофельные блины с сытными начинками</p>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-name">Боксти со сливочной цыпочкой и грибами</h4>
+                                    <span class="menu-item-price">540 ₽</span>
+                                </div>
+                                <p class="menu-item-desc">Два больших картофельных блина с начинкой из нежного куриного филе, лесных грибов, томлёных в сливках с сыром чеддер.</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-name">Боксти с лососем и творожным сыром</h4>
+                                    <span class="menu-item-price">690 ₽</span>
+                                </div>
+                                <p class="menu-item-desc">Картофельный боксти со слабосолёным лососем, нежным сливочно-творожным сыром, свежим огурцом и зеленью.</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-name">Ирландский завтрак (Боксти-классик)</h4>
+                                    <span class="menu-item-price">580 ₽</span>
+                                </div>
+                                <p class="menu-item-desc">Подаётся с картофельным боксти, жареной колбаской, глазуньей из двух яиц, беконом, фасолью в томатном соусе и грибами гриль.</p>
+                            </div>
+                        </div>
+                        <div class="menu-visual scroll-reveal" style="margin-top: 50px;">
+                            <img src="assets/boxty.jpg" alt="Традиционные боксти" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-medium);">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Drinks -->
+                <div class="menu-tab-content" id="tab-drinks">
+                    <!-- Category: Draught Beer -->
+                    <div class="menu-category">
+                        <h3 class="category-title">Разливное пиво</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">St. O'Hara Stout (Фирменный Стаут)</h4>
+                                <span class="menu-item-price">450 ₽ / 480 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Темный стаут с плотной кремовой пеной, нотами горького шоколада и обжаренного кофе. 0.4л / 0.5л.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Irish Red Ale (Красный Эль)</h4>
+                                <span class="menu-item-price">420 ₽ / 450 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Традиционный эль медного цвета с карамельно-солодовым ароматом и мягкой горчинкой. 0.4л / 0.5л.</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Traditional Cider (Яблочный Сидр)</h4>
+                                <span class="menu-item-price">390 ₽ / 420 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Сухой или полусладкий освежающий сидр из натурального сока прямого отжима. 0.4л / 0.5л.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Whiskey -->
+                    <div class="menu-category">
+                        <h3 class="category-title">Ирландский виски (40 мл)</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Jameson Original</h4>
+                                <span class="menu-item-price">410 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Классический виски тройной дистилляции с мягким вкусом с нотами ванили и орехов.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Bushmills Original</h4>
+                                <span class="menu-item-price">430 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Один из старейших брендов виски с медовым послевкусием и легким фруктовым ароматом.</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4 class="menu-item-name">Tullamore D.E.W.</h4>
+                                <span class="menu-item-price">420 ₽</span>
+                            </div>
+                            <p class="menu-item-desc">Сложный бленд с древесными нотами, оттенками цитрусовых и солода.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events" id="events">
+        <div class="container">
+            <div class="events-header text-center scroll-reveal">
+                <span class="section-subtitle">Календарь</span>
+                <h2 class="section-title">Ближайшие события паба</h2>
+                <p class="section-desc">Музыка, спорт и отличная компания. Рекомендуем бронировать столы на эти даты заранее.</p>
+            </div>
+
+            <!-- Loading state -->
+            <div id="events-loading" class="events-status" style="display:none;">
+                <div class="events-spinner"></div>
+                <p>Загружаем афишу…</p>
+            </div>
+
+            <!-- Error / no sheet configured -->
+            <div id="events-error" class="events-status" style="display:none;">
+                <p id="events-error-msg" style="color: var(--color-text-secondary); font-size: 14px;"></p>
+            </div>
+
+            <!-- Dynamic cards injected here -->
+            <div class="events-timeline scroll-reveal" id="events-timeline"></div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="book" id="book">
+        <div class="container grid-two-col">
+            <div class="book-info scroll-reveal">
+                <span class="section-subtitle">Резерв</span>
+                <h2 class="section-title">Забронировать столик в St. O'Hara</h2>
+                <p class="book-desc">Планируете вечер в нашей компании? Заполните простую форму бронирования, и мы подготовим для вас лучшее место. Бронирование столов абсолютно бесплатное.</p>
+                <div class="book-phone-call">
+                    <p>Или позвоните нам напрямую:</p>
+                    <a href="tel:+74942499600" class="book-phone">+7 (4942) 49-96-00</a>
+                </div>
+                <div class="book-rules">
+                    <div class="rule-item" style="display: flex; align-items: start; gap: 8px;">
+                        <!-- Lucide: Leaf -->
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#2E6F40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0;">
+                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                        </svg>
+                        <span>Подтверждение брони по SMS / звонку</span>
+                    </div>
+                    <div class="rule-item" style="display: flex; align-items: start; gap: 8px;">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#2E6F40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0;">
+                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                        </svg>
+                        <span>Бронь удерживается в течение 15 минут от указанного времени</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="book-form-container scroll-reveal" id="booking-box">
+                <form id="reservation-form" class="reservation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guest-name">Ваше имя</label>
+                            <input type="text" id="guest-name" required placeholder="Алексей">
+                        </div>
+                        <div class="form-group">
+                            <label for="guest-phone">Телефон</label>
+                            <input type="tel" id="guest-phone" required placeholder="+7 (999) 000-00-00">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-date">Дата</label>
+                            <input type="date" id="book-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-time">Время</label>
+                            <select id="book-time" required>
+                                <option value="" disabled selected>Выберите время</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                                <option value="23:00">23:00</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guest-count">Количество гостей</label>
+                            <select id="guest-count" required>
+                                <option value="1">1 гость</option>
+                                <option value="2" selected>2 гостя</option>
+                                <option value="3">3 гостя</option>
+                                <option value="4">4 гостя</option>
+                                <option value="5-6">5–6 гостей</option>
+                                <option value="7+">Больше 6 гостей</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="table-zone">Предпочтение по зоне</label>
+                            <select id="table-zone">
+                                <option value="any" selected>Любая свободная зона</option>
+                                <option value="bar">У легендарной барной стойки</option>
+                                <option value="main">В центре событий (основной зал)</option>
+                                <option value="cozy">Мягкая уединённая зона</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="guest-comment">Комментарий к брони (необязательно)</label>
+                        <textarea id="guest-comment" rows="2" placeholder="Например: хотим столик у окна или празднуем день рождения"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Подтвердить бронирование</button>
+                </form>
+
+                <!-- Success State (hidden initially) -->
+                <div class="booking-success" id="booking-success" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h3 class="success-title">Столик забронирован!</h3>
+                    <p class="success-message">Спасибо, <strong id="summary-name">Алексей</strong>. Мы ждем вас <strong id="summary-date">10 июля</strong> в <strong id="summary-time">19:00</strong>.</p>
+                    <p class="success-note">Наш хостес свяжется с вами по номеру <span id="summary-phone">+7...</span> для финального подтверждения в течение 10 минут.</p>
+                    <button class="btn btn-secondary btn-sm" id="btn-reset-booking">Забронировать еще один стол</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Footer -->
+    <footer class="footer" id="contacts">
+        <div class="container grid-footer">
+            <div class="footer-brand">
+                <div class="footer-logo-container">
+                    <img src="assets/logo-clean.png?v=3" alt="St. O'Hara Logo" class="footer-logo-img">
+                </div>
+                <p class="footer-about-text">Истинный ирландский дух, волжское гостеприимство и лучшие традиции пивной культуры в центре Костромы. <b>Sláinte!</b></p>
+            </div>
+            
+            <div class="footer-contacts">
+                <h4 class="footer-title">Контакты</h4>
+                <ul class="footer-contacts-list">
+                    <li>
+                        <span class="icon">
+                            <!-- Lucide: MapPin -->
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #1F3C2F; flex-shrink: 0;">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </span>
+                        <span>г. Кострома, ул. Молочная гора, д. 4А</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <!-- Lucide: Phone -->
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #1F3C2F; flex-shrink: 0;">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </span>
+                        <a href="tel:+74942499600" class="link-hover">+7 (4942) 49-96-00</a>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <!-- Lucide: Mail -->
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #1F3C2F; flex-shrink: 0;">
+                                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                        </span>
+                        <a href="mailto:info@st-ohara.ru" class="link-hover">info@st-ohara.ru</a>
+                    </li>
+                </ul>
+                <div class="footer-social-wrapper" style="margin-top: 24px;">
+                    <a href="https://vk.com/irishpubkostroma" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm vk-brand-btn">
+                        <svg class="vk-brand-icon" viewBox="0 0 48 48" width="18" height="18" style="margin-right: 8px; vertical-align: middle; display: inline-block;">
+                            <path d="M0 23.04C0 12.1788 0 6.74826 3.37413 3.37413C6.74826 0 12.1788 0 23.04 0H24.96C35.8212 0 41.2517 0 44.6259 3.37413C48 6.74826 48 12.1788 48 23.04V24.96C48 35.8212 48 41.2517 44.6259 44.6259C41.2517 48 35.8212 48 24.96 48H23.04C12.1788 48 6.74826 48 3.37413 44.6259C0 41.2517 0 35.8212 0 24.96V23.04Z" fill="#0077FF"/>
+                            <path d="M25.7502 34C17.0702 34 12.1102 28.02 11.9002 18H16.2302C16.3802 25.36 19.6002 28.47 22.1602 29.11V18H26.2202V24.34C28.7102 24.07 31.3302 18 32.2102 18H36.2702C35.5902 22.01 32.6402 24.88 30.5502 26.1C32.6402 27.08 36.0802 29.57 37.5902 34H33.1502C31.9702 30.29 28.9902 27.43 26.2202 27.16V34H25.7502Z" fill="white"/>
+                        </svg>
+                        Мы ВКонтакте
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-hours">
+                <h4 class="footer-title">Режим работы</h4>
+                <ul class="footer-hours-list">
+                    <li>
+                        <span class="day">Воскресенье — Четверг</span>
+                        <span class="time">12:00 — 00:00</span>
+                    </li>
+                    <li>
+                        <span class="day">Пятница — Суббота</span>
+                        <span class="time">12:00 — 02:00</span>
+                    </li>
+                    <li class="kitchen-note">
+                        * Кухня работает до 23:00 вс-чт и до 01:00 пт-сб
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Map container -->
+        <div class="footer-map-container container">
+            <div id="map" style="position: relative; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-medium); height: 380px; width: 100%;"></div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Ирландский паб St. O'Hara. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Yandex Maps JS API -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <!-- Main JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
