@@ -26,10 +26,34 @@ const FALLBACK_EVENTS = [
       btn: 'Зарегистрировать команду' }
 ];
 
-/* Резервные фото меню */
-const FALLBACK_MENU_IMAGES = Array.from({length: 25}, (_, i) => ({
-    image_url: `assets/menu/menu_page_${i + 1}.jpg`
-}));
+/* Резервные фото меню (используются по умолчанию, пока не загружены из Google Таблиц) */
+const FALLBACK_MENU_IMAGES = [
+    { image_url: 'assets/menu/hot_dishes.jpg' },
+    { image_url: 'assets/menu/tea.jpg' },
+    { image_url: 'assets/menu/grill_menu.jpg' },
+    { image_url: 'assets/menu/signature_cocktails.jpg' },
+    { image_url: 'assets/menu/draft_beer_1.jpg' },
+    { image_url: 'assets/menu/classic_cocktails.jpg' },
+    { image_url: 'assets/menu/hot_drinks.jpg' },
+    { image_url: 'assets/menu/cold_snacks.jpg' },
+    { image_url: 'assets/menu/whiskey_wales_japan_islay.jpg' },
+    { image_url: 'assets/menu/desserts.jpg' },
+    { image_url: 'assets/menu/port_wine_rum.jpg' },
+    { image_url: 'assets/menu/red_wines.jpg' },
+    { image_url: 'assets/menu/tinctures_1.jpg' },
+    { image_url: 'assets/menu/sparkling_wines_vermouth.jpg' },
+    { image_url: 'assets/menu/shots_sets.jpg' },
+    { image_url: 'assets/menu/cognac_liqueurs_tequila.jpg' },
+    { image_url: 'assets/menu/soups_burgers.jpg' },
+    { image_url: 'assets/menu/draft_beer_2.jpg' },
+    { image_url: 'assets/menu/bourbon_menu.jpg' },
+    { image_url: 'assets/menu/hot_snacks.jpg' },
+    { image_url: 'assets/menu/tinctures_2_drinks.jpg' },
+    { image_url: 'assets/menu/side_dishes_sauces_bread.jpg' },
+    { image_url: 'assets/menu/salads.jpg' },
+    { image_url: 'assets/menu/irish_whiskey.jpg' },
+    { image_url: 'assets/menu/white_wines.jpg' }
+];
 
 function parseCSV(text) {
     const lines = text.trim().split('\n');
