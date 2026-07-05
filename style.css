@@ -522,99 +522,33 @@ section {
     box-shadow: var(--shadow-subtle);
 }
 
-/* Grid menu content */
-.menu-grid {
-    position: relative;
-    min-height: 400px;
-}
-
-.menu-tab-content {
-    display: none;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 48px;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.menu-tab-content.active {
+/* Photo gallery menu content */
+.menu-gallery-grid {
     display: grid;
-    opacity: 1;
-    transform: translateY(0);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding-top: 32px;
 }
 
-.menu-category {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.menu-category.full-width {
-    grid-column: 1 / -1;
-    max-width: 800px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.category-title {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--color-brand-green);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 12px;
-    margin-bottom: 8px;
-}
-
-.category-subtitle {
-    font-size: 14px;
-    color: var(--color-text-secondary);
-    margin-top: -24px;
-    margin-bottom: 16px;
-}
-
-/* Individual Menu Item */
-.menu-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 12px 16px;
-    border-radius: var(--radius-sm);
+.menu-gallery-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-small);
     transition: var(--transition-smooth);
-    background-color: transparent;
-}
-
-.menu-item:hover {
     background-color: var(--color-bg-card);
-    box-shadow: var(--shadow-subtle);
 }
 
-.menu-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 16px;
+.menu-gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
 }
 
-.menu-item-name {
-    font-family: var(--font-heading);
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--color-brand-green);
-}
-
-.menu-item-price {
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--color-brand-gold);
-    flex-shrink: 0;
-}
-
-.menu-item-desc {
-    font-size: 13px;
-    color: var(--color-text-secondary);
-    line-height: 1.5;
+.menu-gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 /* --------------------------------------------------

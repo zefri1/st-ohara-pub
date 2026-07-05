@@ -7,6 +7,9 @@
    ================================================== */
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR0VuUwAAbHUMnRH9jXeqaHhTMYGbdchMFvOzDfcSk65xP-ymBxAKkClql-bCy2m4sZ0QYhx0SfsJeU/pub?gid=0&single=true&output=csv';
 
+/* Ссылка на таблицу меню (1 колонка: image_url) */
+const MENU_CSV_URL = '';
+
 /* Резервные события — показываются пока таблица не подключена */
 const FALLBACK_EVENTS = [
     { day: '10', month: 'Июля, Пт', time: '21:00',
@@ -22,6 +25,11 @@ const FALLBACK_EVENTS = [
       desc: 'Интеллектуальная паб-игра для команд до 6 человек. Вопросы о пиве, истории и музыке. Победителям — пинта за наш счёт.',
       btn: 'Зарегистрировать команду' }
 ];
+
+/* Резервные фото меню */
+const FALLBACK_MENU_IMAGES = Array.from({length: 25}, (_, i) => ({
+    image_url: `assets/menu/menu_page_${i + 1}.jpg`
+}));
 
 function parseCSV(text) {
     const lines = text.trim().split('\n');
@@ -114,8 +122,55 @@ async function loadEventsFromSheet() {
     }
 }
 
+function renderMenu(images) {
+    const gallery = document.getElementById('menu-gallery');
+    const loading = document.getElementById('menu-loading');
+    const error   = document.getElementById('menu-error');
+    if (!gallery) return;
+
+    loading && (loading.style.display = 'none');
+    error   && (error.style.display   = 'none');
+
+    gallery.innerHTML = images.map(img => `
+        <div class="menu-gallery-item">
+            <img src="${img.image_url}" alt="Меню St. O'Hara" loading="lazy">
+        </div>
+    `).join('');
+}
+
+async function loadMenuFromSheet() {
+    const gallery = document.getElementById('menu-gallery');
+    const loading = document.getElementById('menu-loading');
+    const errorEl = document.getElementById('menu-error');
+    const errorMsg= document.getElementById('menu-error-msg');
+
+    if (!MENU_CSV_URL) {
+        renderMenu(FALLBACK_MENU_IMAGES);
+        return;
+    }
+
+    if (loading) loading.style.display = 'flex';
+    if (gallery) gallery.innerHTML = '';
+
+    try {
+        const res = await fetch(MENU_CSV_URL);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = await res.text();
+        const images = parseCSV(text).filter(e => e.image_url);
+        if (images.length === 0) throw new Error('Таблица меню пуста');
+        renderMenu(images);
+    } catch (err) {
+        if (loading) loading.style.display = 'none';
+        console.warn('Menu load failed, using fallback:', err);
+        renderMenu(FALLBACK_MENU_IMAGES);
+        if (errorMsg) errorMsg.textContent = '⚠ Меню загружено локально.';
+        if (errorEl) errorEl.style.display = 'block';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadEventsFromSheet();
+    loadMenuFromSheet();
 
 
     /* ==================================================
@@ -159,34 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-    /* ==================================================
-       3. INTERACTIVE MENU TABS
-    ================================================== */
-    const tabBtns = document.querySelectorAll('.menu-tab-btn');
-    const tabContents = document.querySelectorAll('.menu-tab-content');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetTab = btn.getAttribute('data-tab');
-
-            // Set active button
-            tabBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            // Switch content with animations
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-                
-                // We use a small timeout to let the transition trigger smoothly
-                if (content.id === `tab-${targetTab}`) {
-                    setTimeout(() => {
-                        content.classList.add('active');
-                    }, 50);
-                }
-            });
-        });
-    });
 
 
     /* ==================================================

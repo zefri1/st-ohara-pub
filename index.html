@@ -131,200 +131,22 @@
                 <span class="section-subtitle">Гастрономия</span>
                 <h2 class="section-title">Фирменное меню St. O'Hara</h2>
                 <p class="section-desc">Мы объединили традиционные ирландские рецепты с европейской и авторской кухней. Честные порции, качественные ингредиенты.</p>
-                
-                <!-- Menu Tabs -->
-                <div class="menu-tabs">
-                    <button class="menu-tab-btn active" data-tab="food">Кухня</button>
-                    <button class="menu-tab-btn" data-tab="irish">Ирландская классика</button>
-                    <button class="menu-tab-btn" data-tab="drinks">Барная карта</button>
+                <!-- Loading state -->
+                <div id="menu-loading" class="events-status" style="display:none;">
+                    <div class="events-spinner"></div>
+                    <p>Загружаем меню…</p>
+                </div>
+
+                <!-- Error / no sheet configured -->
+                <div id="menu-error" class="events-status" style="display:none;">
+                    <p id="menu-error-msg" style="color: var(--color-text-secondary); font-size: 14px;"></p>
+                </div>
+
+                <!-- Photo Gallery Grid -->
+                <div class="menu-gallery-grid scroll-reveal" id="menu-gallery">
+                    <!-- Images will be injected here via app.js -->
                 </div>
             </div>
-
-            <!-- Menu Content -->
-            <div class="menu-grid scroll-reveal">
-                
-                <!-- Tab: Food (Burgers & Main & Starters) -->
-                <div class="menu-tab-content active" id="tab-food">
-                    <!-- Category: Burgers -->
-                    <div class="menu-category">
-                        <h3 class="category-title">Фирменные бургеры</h3>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Бургер «Max O'Hara»</h4>
-                                <span class="menu-item-price">680 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Сочная котлета из мраморной говядины, фирменный соус, сыр чеддер, хрустящий бекон, карамелизированный лук на пышной булочке.</p>
-                        </div>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Рыбный бургер с треской</h4>
-                                <span class="menu-item-price">590 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Хрустящая волжская треска в пивном кляре, соус тартар, маринованные огурчики и свежий салат айсберг.</p>
-                        </div>
-                    </div>
-
-                    <!-- Category: Main -->
-                    <div class="menu-category">
-                        <h3 class="category-title">Горячие блюда</h3>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Стейк ирландского пивовара</h4>
-                                <span class="menu-item-price">980 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Сочный стейк из диафрагмы, маринованный в стауте, подаётся с печёным мини-картофелем и пряным перечным соусом.</p>
-                        </div>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Судак по-волжски</h4>
-                                <span class="menu-item-price">750 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Нежное филе судака с хрустящей корочкой, подаётся на подушке из тонких спагетти из цукини под сливочно-икорным соусом.</p>
-                        </div>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Свиные рёбрышки Глазурь-Стаут</h4>
-                                <span class="menu-item-price">850 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Медленно томлёные свиные рёбрышки в густой глазури на основе тёмного пива и мёда. Подаются с маринованной капустой.</p>
-                        </div>
-                    </div>
-
-                    <!-- Category: Starters -->
-                    <div class="menu-category">
-                        <h3 class="category-title">Пивные закуски</h3>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Пинта жареных креветок</h4>
-                                <span class="menu-item-price">720 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Тигровые креветки, обжаренные в чесночном масле с зеленью. Подаются с ломтиком лимона и соусом айоли.</p>
-                        </div>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Брускетта с сочным ростбифом</h4>
-                                <span class="menu-item-price">480 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Хрустящий багет, ростбиф собственного приготовления, горчичный соус, вяленые томаты и руккола.</p>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Запечённый сыр Камамбер</h4>
-                                <span class="menu-item-price">620 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Теплый камамбер с брусничным конфитюром и грецкими орехами. Подаётся с пшеничными гренками.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tab: Irish Classic -->
-                <div class="menu-tab-content" id="tab-irish">
-                    <div class="grid-two-col" style="gap: 40px; align-items: start; width: 100%;">
-                        <div class="menu-category" style="width: 100%;">
-                            <h3 class="category-title">Традиционные ирландские Боксти</h3>
-                            <p class="category-subtitle">Классические ирландские картофельные блины с сытными начинками</p>
-                            
-                            <div class="menu-item">
-                                <div class="menu-item-header">
-                                    <h4 class="menu-item-name">Боксти со сливочной цыпочкой и грибами</h4>
-                                    <span class="menu-item-price">540 ₽</span>
-                                </div>
-                                <p class="menu-item-desc">Два больших картофельных блина с начинкой из нежного куриного филе, лесных грибов, томлёных в сливках с сыром чеддер.</p>
-                            </div>
-                            
-                            <div class="menu-item">
-                                <div class="menu-item-header">
-                                    <h4 class="menu-item-name">Боксти с лососем и творожным сыром</h4>
-                                    <span class="menu-item-price">690 ₽</span>
-                                </div>
-                                <p class="menu-item-desc">Картофельный боксти со слабосолёным лососем, нежным сливочно-творожным сыром, свежим огурцом и зеленью.</p>
-                            </div>
-
-                            <div class="menu-item">
-                                <div class="menu-item-header">
-                                    <h4 class="menu-item-name">Ирландский завтрак (Боксти-классик)</h4>
-                                    <span class="menu-item-price">580 ₽</span>
-                                </div>
-                                <p class="menu-item-desc">Подаётся с картофельным боксти, жареной колбаской, глазуньей из двух яиц, беконом, фасолью в томатном соусе и грибами гриль.</p>
-                            </div>
-                        </div>
-                        <div class="menu-visual scroll-reveal" style="margin-top: 50px;">
-                            <img src="assets/boxty.jpg" alt="Традиционные боксти" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-medium);">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tab: Drinks -->
-                <div class="menu-tab-content" id="tab-drinks">
-                    <!-- Category: Draught Beer -->
-                    <div class="menu-category">
-                        <h3 class="category-title">Разливное пиво</h3>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">St. O'Hara Stout (Фирменный Стаут)</h4>
-                                <span class="menu-item-price">450 ₽ / 480 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Темный стаут с плотной кремовой пеной, нотами горького шоколада и обжаренного кофе. 0.4л / 0.5л.</p>
-                        </div>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Irish Red Ale (Красный Эль)</h4>
-                                <span class="menu-item-price">420 ₽ / 450 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Традиционный эль медного цвета с карамельно-солодовым ароматом и мягкой горчинкой. 0.4л / 0.5л.</p>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Traditional Cider (Яблочный Сидр)</h4>
-                                <span class="menu-item-price">390 ₽ / 420 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Сухой или полусладкий освежающий сидр из натурального сока прямого отжима. 0.4л / 0.5л.</p>
-                        </div>
-                    </div>
-
-                    <!-- Category: Whiskey -->
-                    <div class="menu-category">
-                        <h3 class="category-title">Ирландский виски (40 мл)</h3>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Jameson Original</h4>
-                                <span class="menu-item-price">410 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Классический виски тройной дистилляции с мягким вкусом с нотами ванили и орехов.</p>
-                        </div>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Bushmills Original</h4>
-                                <span class="menu-item-price">430 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Один из старейших брендов виски с медовым послевкусием и легким фруктовым ароматом.</p>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <h4 class="menu-item-name">Tullamore D.E.W.</h4>
-                                <span class="menu-item-price">420 ₽</span>
-                            </div>
-                            <p class="menu-item-desc">Сложный бленд с древесными нотами, оттенками цитрусовых и солода.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </section>
 
     <!-- Events Section -->
