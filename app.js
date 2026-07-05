@@ -175,7 +175,9 @@ function renderMenu(images, category = 'all') {
 
     gallery.innerHTML = filteredImages.map(img => `
         <div class="swiper-slide menu-gallery-item">
-            <img src="${img.image_url}" alt="Меню St. O'Hara" loading="lazy">
+            <a href="${img.image_url}" data-fancybox="gallery">
+                <img src="${img.image_url}" alt="Меню St. O'Hara" loading="lazy">
+            </a>
         </div>
     `).join('');
 
@@ -195,6 +197,21 @@ function renderMenu(images, category = 'all') {
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
+            },
+        });
+    }
+
+    // Initialize Fancybox for the newly rendered images
+    if (typeof Fancybox !== 'undefined') {
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            // Options
+            Thumbs: false,
+            Toolbar: {
+                display: {
+                    left: ["infobar"],
+                    middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
+                    right: ["slideshow", "thumbs", "close"],
+                },
             },
         });
     }

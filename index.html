@@ -11,11 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css?v=2.2">
+    <link rel="stylesheet" href="style.css?v=2.3">
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
-    <script src="app.js?v=2.2" defer></script>
+    <!-- Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
+    <script src="app.js?v=2.3" defer></script>
 </head>
 <body>
 
@@ -156,18 +160,20 @@
                     <p id="menu-error-msg" style="color: var(--color-text-secondary); font-size: 14px;"></p>
                 </div>
 
-                <!-- Photo Gallery Carousel (Swiper) -->
-                <div class="swiper menu-swiper scroll-reveal">
-                    <div class="swiper-wrapper" id="menu-gallery">
-                        <!-- Images will be injected here via app.js -->
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Navigation -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
+            </div> <!-- End menu-header -->
+        </div> <!-- End container -->
+
+        <!-- Photo Gallery Carousel (Swiper) FULL WIDTH -->
+        <div class="swiper menu-swiper scroll-reveal">
+            <div class="swiper-wrapper" id="menu-gallery">
+                <!-- Images will be injected here via app.js -->
             </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
     </section>
 
     <!-- Events Section -->
