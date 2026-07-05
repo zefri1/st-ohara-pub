@@ -28,31 +28,31 @@ const FALLBACK_EVENTS = [
 
 /* Резервные фото меню (используются по умолчанию, пока не загружены из Google Таблиц) */
 const FALLBACK_MENU_IMAGES = [
-    { image_url: 'assets/menu/hot_dishes.jpg' },
-    { image_url: 'assets/menu/tea.jpg' },
-    { image_url: 'assets/menu/grill_menu.jpg' },
-    { image_url: 'assets/menu/signature_cocktails.jpg' },
-    { image_url: 'assets/menu/draft_beer_1.jpg' },
-    { image_url: 'assets/menu/classic_cocktails.jpg' },
-    { image_url: 'assets/menu/hot_drinks.jpg' },
-    { image_url: 'assets/menu/cold_snacks.jpg' },
-    { image_url: 'assets/menu/whiskey_wales_japan_islay.jpg' },
-    { image_url: 'assets/menu/desserts.jpg' },
-    { image_url: 'assets/menu/port_wine_rum.jpg' },
-    { image_url: 'assets/menu/red_wines.jpg' },
-    { image_url: 'assets/menu/tinctures_1.jpg' },
-    { image_url: 'assets/menu/sparkling_wines_vermouth.jpg' },
-    { image_url: 'assets/menu/shots_sets.jpg' },
-    { image_url: 'assets/menu/cognac_liqueurs_tequila.jpg' },
-    { image_url: 'assets/menu/soups_burgers.jpg' },
-    { image_url: 'assets/menu/draft_beer_2.jpg' },
-    { image_url: 'assets/menu/bourbon_menu.jpg' },
-    { image_url: 'assets/menu/hot_snacks.jpg' },
-    { image_url: 'assets/menu/tinctures_2_drinks.jpg' },
-    { image_url: 'assets/menu/side_dishes_sauces_bread.jpg' },
-    { image_url: 'assets/menu/salads.jpg' },
-    { image_url: 'assets/menu/irish_whiskey.jpg' },
-    { image_url: 'assets/menu/white_wines.jpg' }
+    { image_url: 'assets/menu/hot_dishes.jpg', category: 'food' },
+    { image_url: 'assets/menu/tea.jpg', category: 'non_alcoholic' },
+    { image_url: 'assets/menu/grill_menu.jpg', category: 'food' },
+    { image_url: 'assets/menu/signature_cocktails.jpg', category: 'bar' },
+    { image_url: 'assets/menu/draft_beer_1.jpg', category: 'bar' },
+    { image_url: 'assets/menu/classic_cocktails.jpg', category: 'bar' },
+    { image_url: 'assets/menu/hot_drinks.jpg', category: 'non_alcoholic' },
+    { image_url: 'assets/menu/cold_snacks.jpg', category: 'food' },
+    { image_url: 'assets/menu/whiskey_wales_japan_islay.jpg', category: 'bar' },
+    { image_url: 'assets/menu/desserts.jpg', category: 'food' },
+    { image_url: 'assets/menu/port_wine_rum.jpg', category: 'bar' },
+    { image_url: 'assets/menu/red_wines.jpg', category: 'bar' },
+    { image_url: 'assets/menu/tinctures_1.jpg', category: 'bar' },
+    { image_url: 'assets/menu/sparkling_wines_vermouth.jpg', category: 'bar' },
+    { image_url: 'assets/menu/shots_sets.jpg', category: 'bar' },
+    { image_url: 'assets/menu/cognac_liqueurs_tequila.jpg', category: 'bar' },
+    { image_url: 'assets/menu/soups_burgers.jpg', category: 'food' },
+    { image_url: 'assets/menu/draft_beer_2.jpg', category: 'bar' },
+    { image_url: 'assets/menu/bourbon_menu.jpg', category: 'bar' },
+    { image_url: 'assets/menu/hot_snacks.jpg', category: 'food' },
+    { image_url: 'assets/menu/tinctures_2_drinks.jpg', category: 'non_alcoholic' },
+    { image_url: 'assets/menu/side_dishes_sauces_bread.jpg', category: 'food' },
+    { image_url: 'assets/menu/salads.jpg', category: 'food' },
+    { image_url: 'assets/menu/irish_whiskey.jpg', category: 'bar' },
+    { image_url: 'assets/menu/white_wines.jpg', category: 'bar' }
 ];
 
 function parseCSV(text) {
@@ -146,7 +146,9 @@ async function loadEventsFromSheet() {
     }
 }
 
-function renderMenu(images) {
+let currentMenuImages = [];
+
+function renderMenu(images, category = 'all') {
     const gallery = document.getElementById('menu-gallery');
     const loading = document.getElementById('menu-loading');
     const error   = document.getElementById('menu-error');
@@ -155,7 +157,11 @@ function renderMenu(images) {
     loading && (loading.style.display = 'none');
     error   && (error.style.display   = 'none');
 
-    gallery.innerHTML = images.map(img => `
+    const filteredImages = category === 'all' 
+        ? images 
+        : images.filter(img => img.category === category);
+
+    gallery.innerHTML = filteredImages.map(img => `
         <div class="menu-gallery-item">
             <img src="${img.image_url}" alt="Меню St. O'Hara" loading="lazy">
         </div>
@@ -169,7 +175,8 @@ async function loadMenuFromSheet() {
     const errorMsg= document.getElementById('menu-error-msg');
 
     if (!MENU_CSV_URL) {
-        renderMenu(FALLBACK_MENU_IMAGES);
+        currentMenuImages = FALLBACK_MENU_IMAGES;
+        renderMenu(currentMenuImages, 'all');
         return;
     }
 
@@ -182,11 +189,13 @@ async function loadMenuFromSheet() {
         const text = await res.text();
         const images = parseCSV(text).filter(e => e.image_url);
         if (images.length === 0) throw new Error('Таблица меню пуста');
-        renderMenu(images);
+        currentMenuImages = images;
+        renderMenu(currentMenuImages, 'all');
     } catch (err) {
         if (loading) loading.style.display = 'none';
         console.warn('Menu load failed, using fallback:', err);
-        renderMenu(FALLBACK_MENU_IMAGES);
+        currentMenuImages = FALLBACK_MENU_IMAGES;
+        renderMenu(currentMenuImages, 'all');
         if (errorMsg) errorMsg.textContent = '⚠ Меню загружено локально.';
         if (errorEl) errorEl.style.display = 'block';
     }
@@ -195,6 +204,17 @@ async function loadMenuFromSheet() {
 document.addEventListener('DOMContentLoaded', () => {
     loadEventsFromSheet();
     loadMenuFromSheet();
+
+    // Menu category tabs
+    const menuTabs = document.querySelectorAll('.menu-tab-btn');
+    menuTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            menuTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const category = tab.dataset.category;
+            renderMenu(currentMenuImages, category);
+        });
+    });
 
 
     /* ==================================================
