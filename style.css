@@ -492,10 +492,12 @@ section {
 
 .menu-tabs {
     display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
     background-color: rgba(31, 60, 47, 0.04);
     padding: 6px;
-    border-radius: 30px;
+    border-radius: 16px; /* Reduced from 30px to look better when wrapped */
     margin-bottom: 56px;
 }
 
@@ -529,8 +531,18 @@ section {
     padding-bottom: 64px; /* Space for pagination bullets */
 }
 
-.menu-swiper .swiper-pagination-bullet-active {
-    background: var(--color-brand-green);
+.menu-swiper .swiper-pagination-fraction {
+    color: var(--color-text-secondary);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    bottom: 24px;
+}
+
+.menu-swiper .swiper-pagination-current {
+    color: var(--color-brand-green);
+    font-size: 20px;
 }
 
 .menu-swiper .swiper-button-next,
@@ -1136,15 +1148,19 @@ section {
     }
     
     .menu-tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
         width: 100%;
-        flex-direction: column;
-        border-radius: var(--radius-md);
-        padding: 10px;
+        border-radius: 16px;
     }
     
     .menu-tab-btn {
-        width: 100%;
-        border-radius: 18px;
+        width: auto;
+        flex: 1 1 calc(50% - 10px);
+        text-align: center;
+        padding: 10px 8px;
+        font-size: 13px;
+        border-radius: 12px;
     }
     
     .event-card {

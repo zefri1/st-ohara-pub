@@ -191,8 +191,7 @@ function renderMenu(images, category = 'all') {
             grabCursor: true,
             pagination: {
                 el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true,
+                type: 'fraction',
             },
             navigation: {
                 nextEl: '.swiper-button-next',
