@@ -522,31 +522,29 @@ section {
     box-shadow: var(--shadow-subtle);
 }
 
-/* Photo gallery menu content (Horizontal Carousel) */
-.menu-gallery-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 24px;
-    padding: 32px 16px 24px 16px; /* Padding to allow shadows and spacing */
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-brand-green) var(--color-bg-secondary);
+/* Photo gallery menu content (Swiper Carousel) */
+.menu-swiper {
+    width: 100%;
+    padding-top: 32px;
+    padding-bottom: 64px; /* Space for pagination bullets */
 }
 
-.menu-gallery-grid::-webkit-scrollbar {
-    height: 8px;
-}
-.menu-gallery-grid::-webkit-scrollbar-track {
-    background: var(--color-bg-secondary);
-    border-radius: 4px;
-}
-.menu-gallery-grid::-webkit-scrollbar-thumb {
+.menu-swiper .swiper-pagination-bullet-active {
     background: var(--color-brand-green);
-    border-radius: 4px;
+}
+
+.menu-swiper .swiper-button-next,
+.menu-swiper .swiper-button-prev {
+    color: var(--color-brand-green);
+    background: rgba(26, 31, 28, 0.5); /* Semi-transparent background for better visibility */
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.menu-swiper .swiper-button-next:after,
+.menu-swiper .swiper-button-prev:after {
+    font-size: 20px;
 }
 
 .menu-gallery-item {
@@ -556,9 +554,9 @@ section {
     box-shadow: var(--shadow-small);
     transition: var(--transition-smooth);
     background-color: var(--color-bg-card);
-    flex: 0 0 85%; /* Take up most of the screen width on mobile, leaving a bit of next item visible */
-    max-width: 350px; /* Limit size on desktop */
-    scroll-snap-align: center;
+    width: 85%; /* Slide takes up most of the screen */
+    max-width: 350px;
+    height: auto;
 }
 
 .menu-gallery-item:hover {

@@ -153,6 +153,8 @@ async function loadEventsFromSheet() {
 
 let currentMenuImages = [];
 
+let menuSwiper = null;
+
 function renderMenu(images, category = 'all') {
     const gallery = document.getElementById('menu-gallery');
     const loading = document.getElementById('menu-loading');
@@ -166,11 +168,36 @@ function renderMenu(images, category = 'all') {
         ? images 
         : images.filter(img => img.category && img.category.trim().toLowerCase() === category.toLowerCase());
 
+    if (menuSwiper) {
+        menuSwiper.destroy(true, true);
+        menuSwiper = null;
+    }
+
     gallery.innerHTML = filteredImages.map(img => `
-        <div class="menu-gallery-item">
+        <div class="swiper-slide menu-gallery-item">
             <img src="${img.image_url}" alt="Меню St. O'Hara" loading="lazy">
         </div>
     `).join('');
+
+    // Initialize Swiper
+    if (typeof Swiper !== 'undefined') {
+        menuSwiper = new Swiper('.menu-swiper', {
+            loop: filteredImages.length > 1, // Only loop if more than 1 image
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            spaceBetween: 24,
+            grabCursor: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
 }
 
 async function loadMenuFromSheet() {
