@@ -741,158 +741,84 @@ section {
     background-color: var(--color-bg-secondary);
 }
 
+.book-center {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px 0;
+}
+
 .book-desc {
     font-size: 16px;
     color: var(--color-text-secondary);
-    margin-bottom: 32px;
+    margin-bottom: 48px;
 }
 
-.book-phone-call {
-    margin-bottom: 40px;
-}
-
-.book-phone-call p {
-    font-size: 13px;
-    color: var(--color-text-light);
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.book-phone {
+.book-phone-big {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
     font-family: var(--font-heading);
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 700;
     color: var(--color-brand-green);
+    background: var(--color-bg-card);
+    padding: 24px 48px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-small);
+    transition: var(--transition-smooth);
+    margin-bottom: 48px;
 }
 
-.book-phone:hover {
+.book-phone-big:hover {
     color: var(--color-brand-gold);
+    border-color: #2E6F40;
+    box-shadow: 0 16px 40px rgba(46, 111, 64, 0.08);
+    transform: translateY(-4px);
 }
 
-.book-rules {
+.book-hours-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    background: var(--color-bg-primary);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    margin: 0 auto;
+    max-width: 480px;
+}
+
+.book-hours-item {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 4px;
+}
+
+.book-hours-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--color-text-light);
+}
+
+.book-hours-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.book-hours-divider {
+    width: 1px;
+    height: 40px;
+    background-color: var(--color-border);
 }
 
 .rule-item {
     font-size: 14px;
     font-weight: 500;
     color: var(--color-text-secondary);
-}
-
-/* Reservation form box */
-.book-form-container {
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    padding: 48px;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-medium);
-    position: relative;
-    min-height: 480px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: var(--transition-smooth);
-}
-
-.book-form-container:hover {
-    border-color: #2E6F40;
-    box-shadow: 0 16px 40px rgba(46, 111, 64, 0.08);
-}
-
-.reservation-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-secondary);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    padding: 12px 16px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-size: 14px;
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
-    transition: var(--transition-smooth);
-    width: 100%;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-brand-green);
-    background-color: var(--color-bg-card);
-}
-
-/* Booking success state */
-.booking-success {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px 0;
-    animation: fadeIn 0.6s ease forwards;
-}
-
-.success-icon {
-    width: 72px;
-    height: 72px;
-    background-color: rgba(31, 60, 47, 0.06);
-    color: var(--color-brand-green);
-    font-size: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-bottom: 24px;
-}
-
-.success-title {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--color-brand-green);
-    margin-bottom: 12px;
-}
-
-.success-message {
-    font-size: 16px;
-    color: var(--color-text-secondary);
-    margin-bottom: 12px;
-    max-width: 320px;
-}
-
-.success-note {
-    font-size: 13px;
-    color: var(--color-text-light);
-    margin-bottom: 32px;
-    max-width: 300px;
 }
 
 /* --------------------------------------------------

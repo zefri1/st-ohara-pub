@@ -213,106 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
        5. EVENT BOOKING TRIGGER
     ================================================== */
     const eventTriggers = document.querySelectorAll('.event-book-trigger');
-    const commentField = document.getElementById('guest-comment');
-
     eventTriggers.forEach(trigger => {
         trigger.addEventListener('click', (e) => {
-            const eventName = trigger.getAttribute('data-event');
-            if (eventName && commentField) {
-                commentField.value = `Бронь на событие: "${eventName}"`;
-            }
+            // Can be repurposed or removed if needed, for now just scrolls to book section
         });
     });
-
-
-    /* ==================================================
-       6. RESERVATION FORM HANDLING & VALIDATION
-    ================================================== */
-    const reservationForm = document.getElementById('reservation-form');
-    const bookingSuccess = document.getElementById('booking-success');
-    const dateInput = document.getElementById('book-date');
-    const resetBookingBtn = document.getElementById('btn-reset-booking');
-
-    // Pre-fill date input with today's date and set minimum to today
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    let mm = today.getMonth() + 1; // Months start at 0
-    let dd = today.getDate();
-
-    if (dd < 10) dd = '0' + dd;
-    if (mm < 10) mm = '0' + mm;
-
-    const formattedToday = `${yyyy}-${mm}-${dd}`;
-    if (dateInput) {
-        dateInput.value = formattedToday;
-        dateInput.min = formattedToday;
-    }
-
-    // Submit handler
-    if (reservationForm) {
-        reservationForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Extract values
-            const name = document.getElementById('guest-name').value;
-            const phone = document.getElementById('guest-phone').value;
-            const dateVal = dateInput.value;
-            const timeVal = document.getElementById('book-time').value;
-
-            // Format date for success screen (e.g. 2026-07-06 to readable Russian style)
-            const dateParts = dateVal.split('-');
-            const monthsRu = [
-                'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-                'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
-            ];
-            let dateFormattedText = dateVal;
-            if (dateParts.length === 3) {
-                const dayNum = parseInt(dateParts[2], 10);
-                const monthNum = parseInt(dateParts[1], 10) - 1;
-                dateFormattedText = `${dayNum} ${monthsRu[monthNum]}`;
-            }
-
-            // Populate summary fields
-            document.getElementById('summary-name').textContent = name;
-            document.getElementById('summary-date').textContent = dateFormattedText;
-            document.getElementById('summary-time').textContent = timeVal;
-            document.getElementById('summary-phone').textContent = phone;
-
-            // Show submit loading feedback
-            const submitBtn = reservationForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Отправка брони...';
-            submitBtn.disabled = true;
-
-            // Simulate server request delay
-            setTimeout(() => {
-                // Hide form, show success
-                reservationForm.style.display = 'none';
-                bookingSuccess.style.display = 'flex';
-                
-                // Scroll slightly to make sure the success state is fully in view
-                document.getElementById('booking-box').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                
-                // Restore button state
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1200);
-        });
-    }
-
-    // Reset booking form handler
-    if (resetBookingBtn) {
-        resetBookingBtn.addEventListener('click', () => {
-            if (reservationForm) {
-                reservationForm.reset();
-                if (dateInput) dateInput.value = formattedToday;
-                reservationForm.style.display = 'flex';
-            }
-            if (bookingSuccess) {
-                bookingSuccess.style.display = 'none';
-            }
-        });
-    }
 });
 
 /* ==================================================
