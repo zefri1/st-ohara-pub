@@ -1060,7 +1060,7 @@ section {
     
     .hero {
         min-height: auto;
-        padding-top: 140px;
+        padding-top: var(--navbar-height);
         padding-bottom: 80px;
         flex-direction: column;
     }
@@ -1150,6 +1150,30 @@ section {
     .hero-info-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+    }
+    
+    .menu-gallery-item {
+        width: 65%; /* Smaller on mobile so arrows don't overlap */
+    }
+    
+    .menu-swiper .swiper-button-next,
+    .menu-swiper .swiper-button-prev {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .menu-swiper .swiper-button-next:after,
+    .menu-swiper .swiper-button-prev:after {
+        font-size: 16px;
     }
     
     .menu-tabs {
